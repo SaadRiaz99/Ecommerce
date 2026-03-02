@@ -1,25 +1,47 @@
-# MyShop - Django E-commerce Website
+# 🛍️ Ecommerce Django Project
 
-MyShop is a simple, professional e-commerce website built using **Django**.  
-It features a clean light-themed UI with **Home, Shop, Cart, Contact, and Auth (Login/Signup) pages**.
+This is **Ecommerce**, a simple yet professional **Django e-commerce website** built by Saad Riaz.  
+It includes essential features like product browsing, cart, contact form, and user authentication (login/signup).
 
----
-
-## 🛠 Features
-
-- Light-themed Home page  
-- Dynamic Shop page (can integrate database products)  
-- Cart page with totals and checkout button  
-- Contact page with form  
-- Combined Login/Signup page with Django backend authentication  
-- Navbar with links to all pages, cart button, and user session support  
+🔗 Repo: https://github.com/SaadRiaz99/Ecommerce.git
 
 ---
 
-## 💻 Installation
+## 🚀 Features
+
+✔ Light-themed Home page  
+✔ Shop page with product cards  
+✔ Cart page with item overview  
+✔ Contact page (form only)  
+✔ Combined Login/Signup page  
+✔ Django backend user authentication  
+✔ Clean UI using HTML & CSS
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Used |
+|------------|------|
+| Python     | ✅ |
+| Django     | ✅ |
+| HTML       | ✅ |
+| CSS        | ✅ |
+| Django Auth | ✅ |
+| SQLite     | Default |
+
+---
+
+## 🧩 Screenshots
+
+*(Paste screenshots here if you like)*
+
+---
+
+## 📦 Installation
 
 1. **Clone the repository**
 
 ```bash
-git clone <your-repo-url>
-cd myshop
+git clone https://github.com/SaadRiaz99/Ecommerce.git
+cd Ecommerce
