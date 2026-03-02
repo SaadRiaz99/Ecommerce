@@ -7,6 +7,8 @@ def shop(request):
     return render(request  , 'shop.html')
 def contact(request):
     return render(request  , 'contact.html')
+def cart(request):
+    return render(request  , 'cart.html')
 
 
 

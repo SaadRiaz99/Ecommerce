@@ -1,0 +1,14 @@
+.cart-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #4a6cf7;
+    color: white;
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+    background: #2f4be0;
+}

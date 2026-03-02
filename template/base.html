@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
     <link rel="stylesheet" href="{% static 'style/shop.css' %}">
     <link rel="stylesheet" href="{% static 'style/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'style/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'style/home.css' %}">
 </head>
 <body>
 
@@ -18,7 +20,9 @@
         <li><a href="{% url 'shop' %}">Shop</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
     </ul>
-    <div class="cart">Cart</div>
+   <div class="cart">
+    <a href="{% url 'cart' %}" class="cart-btn">Cart</a>
+</div>
 </nav>
 
 
