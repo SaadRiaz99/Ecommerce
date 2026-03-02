@@ -9,6 +9,8 @@ def contact(request):
     return render(request  , 'contact.html')
 def cart(request):
     return render(request  , 'cart.html')
+def login_signup(request):
+    return render(request  , 'form.html')
 
 
 
