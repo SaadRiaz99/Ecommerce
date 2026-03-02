@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MyShop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="logo">MyShop</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop/">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="cart">Cart</div>
+</nav>
+
+<!-- Page Content -->
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 MyShop | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
