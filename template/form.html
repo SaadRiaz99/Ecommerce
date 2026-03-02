@@ -37,6 +37,15 @@
     const SignupTab = document.getElementById("signup-tab");
     const loginForm = document.getElementById("signup-form");
     const signupForm = document.getElementById('signup-form');
+
+
+    loginTab.addEventListener("click" , () => {
+        loginTab.classList.add('active');
+        SignupTab.classList.remove('active');
+        loginForm.style.display("Block");
+        signupForm.style.display("None");
+
+    })
 </script>
 <!-- <script>
     // Tab switching
