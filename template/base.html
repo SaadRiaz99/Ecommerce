@@ -14,9 +14,9 @@
 <nav class="navbar">
     <div class="logo">MyShop</div>
     <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/shop/">Shop</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'shop' %}">Shop</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
     </ul>
     <div class="cart">Cart</div>
 </nav>
