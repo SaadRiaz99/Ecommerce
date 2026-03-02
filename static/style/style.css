@@ -526,3 +526,63 @@ footer {
 .auth-form button:hover {
     background: #2f4be0;
 }
+
+/* ================= MEDIA QUERIES ================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 0 5%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .categories, .products, .shop-section, .contact-section, .cart-section, .auth-section {
+        padding: 40px 5%;
+    }
+
+    .shop-section {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cart-total {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .cart-container, .contact-container, .auth-container {
+        padding: 25px;
+    }
+
+    .cart-table th:nth-child(3), 
+    .cart-table td:nth-child(3) {
+        display: none; /* Hide quantity on very small screens if needed, or just let it scroll */
+    }
+    
+    .cart-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
