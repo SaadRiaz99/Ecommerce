@@ -46,6 +46,13 @@
         signupForm.style.display("None");
 
     })
+    SignupTab.addEventListener("click" , () => {
+        loginTab.classList.remove('active');
+        SignupTab.classList.add('active');
+        loginForm.style.display("None");
+        signupForm.style.display("Block");
+
+    })
 </script>
 <!-- <script>
     // Tab switching
