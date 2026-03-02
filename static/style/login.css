@@ -1,0 +1,67 @@
+/* ================= AUTH PAGE ================= */
+
+.auth-section {
+    padding: 80px 8%;
+    background: #f8f9fb;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-container {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Tabs */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.auth-tabs button {
+    padding: 10px 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: 0.3s;
+    outline: none;
+}
+
+.auth-tabs button.active {
+    border-bottom: 3px solid #4a6cf7;
+    color: #4a6cf7;
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.auth-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #4a6cf7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: #2f4be0;
+}
