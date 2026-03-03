@@ -1,4 +1,5 @@
 from django.shortcuts import render , HttpResponse , redirect
+from django.contrib import messages
 
 
 def home(request):
@@ -10,7 +11,50 @@ def contact(request):
 def cart(request):
     return render(request  , 'cart.html')
 def login_signup(request):
+    if request.method ==  "POST":
+        form_type = request.POST.get('form_type')
+        if form_type == 'login':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+
+            user = authenticate(request , username = username , password = password)
+            if user:
+                redirect('home')
+            else:
+                messages.error(request , "Invalid username or password")
+
+        elif form_type == 'signup':
+            username = request.POST.get("username")
+            email = request.POST.get("email")
+            password = request.POST.get("password")
+            confirm_password = request.POST.get("confirm_password")
+
+
+            if password != confirm_password:
+                messages.error(request , "Password does not Match")
+            elif user.objects.filter(username= username).exists():
+                messages.error(request , "USername already Exists")
+            else :
+                user.objects.create_user(username = username , email = email , password = password)
+                
+                login(request, user)
+                return redirect("home")
+        
+        
+        # username = request.POST.get('username')
+        # password = request.POST.get('password')
+        # user = authenticate(request , username = username , password = password)
+
+
+
+        # if user:
+        #     redirect('home')
+        # else:
+        #     messages.error(request , "Invalid username or password")
+
     return render(request  , 'form.html')
+
 
 
 

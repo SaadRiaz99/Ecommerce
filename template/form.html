@@ -34,25 +34,25 @@
 </section>
 <script>
     const loginTab = document.getElementById("login-tab");
-    const SignupTab = document.getElementById("signup-tab");
-    const loginForm = document.getElementById("signup-form");
-    const signupForm = document.getElementById('signup-form');
+    const signupTab = document.getElementById("signup-tab");
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
 
+    loginTab.addEventListener("click", () => {
+        loginTab.classList.add("active");
+        signupTab.classList.remove("active");
 
-    loginTab.addEventListener("click" , () => {
-        loginTab.classList.add('active');
-        SignupTab.classList.remove('active');
-        loginForm.style.display("Block");
-        signupForm.style.display("None");
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+    });
 
-    })
-    SignupTab.addEventListener("click" , () => {
-        loginTab.classList.remove('active');
-        SignupTab.classList.add('active');
-        loginForm.style.display("None");
-        signupForm.style.display("Block");
+    signupTab.addEventListener("click", () => {
+        loginTab.classList.remove("active");
+        signupTab.classList.add("active");
 
-    })
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+    });
 </script>
 
 
