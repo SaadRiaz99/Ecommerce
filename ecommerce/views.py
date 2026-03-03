@@ -1,61 +1,63 @@
-from django.shortcuts import render , HttpResponse , redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
 
 def home(request):
-    return render(request  , 'home.html')
+    return render(request, 'home.html')
+
+
 def shop(request):
-    return render(request  , 'shop.html')
+    return render(request, 'shop.html')
+
+
 def contact(request):
-    return render(request  , 'contact.html')
+    return render(request, 'contact.html')
+
+
 def cart(request):
-    return render(request  , 'cart.html')
+    return render(request, 'cart.html')
+
+
 def login_signup(request):
-    if request.method ==  "POST":
+    if request.method == "POST":
         form_type = request.POST.get('form_type')
+
+        # LOGIN
         if form_type == 'login':
             username = request.POST.get('username')
             password = request.POST.get('password')
 
+            user = authenticate(request, username=username, password=password)
 
-            user = authenticate(request , username = username , password = password)
-            if user:
-                redirect('home')
+            if user is not None:
+                login(request, user)
+                return redirect('home')   
             else:
-                messages.error(request , "Invalid username or password")
+                messages.error(request, "Invalid username or password")
 
+        # SIGNUP
         elif form_type == 'signup':
             username = request.POST.get("username")
             email = request.POST.get("email")
             password = request.POST.get("password")
             confirm_password = request.POST.get("confirm_password")
 
-
             if password != confirm_password:
-                messages.error(request , "Password does not Match")
-            elif user.objects.filter(username= username).exists():
-                messages.error(request , "USername already Exists")
-            else :
-                user.objects.create_user(username = username , email = email , password = password)
-                
-                login(request, user)
+                messages.error(request, "Passwords do not match")
+
+            elif User.objects.filter(username=username).exists():   
+                messages.error(request, "Username already exists")
+
+            else:
+                new_user = User.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password
+                )
+
+                login(request, new_user)   
                 return redirect("home")
-        
-        
-        # username = request.POST.get('username')
-        # password = request.POST.get('password')
-        # user = authenticate(request , username = username , password = password)
 
-
-
-        # if user:
-        #     redirect('home')
-        # else:
-        #     messages.error(request , "Invalid username or password")
-
-    return render(request  , 'form.html')
-
-
-
-
-
+    return render(request, 'form.html')
