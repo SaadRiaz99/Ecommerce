@@ -10,7 +10,11 @@
 
         <h2>Contact Us</h2>
         <p>Have questions? Send us a message and we'll get back to you!</p>
-
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
         <form action="#" method="post" class="contact-form">
             {% csrf_token %}
             <input type="text" name="name" placeholder="Your Name" required>

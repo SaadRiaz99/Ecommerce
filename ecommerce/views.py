@@ -18,10 +18,14 @@ def contact(request):
         name = request.POST.get("name")
         email = request.POST.get("email")
         txt_message = request.POST.get("message")
-        contact.object.create(
-            name = name , 
-            email = email ,
-            message = txt_message)
+
+        
+        Contact.objects.create(
+            name=name, 
+            email=email, 
+            message=txt_message
+        )
+
         messages.success(request, "Your message has been sent successfully!")
         return redirect("contact")
         
