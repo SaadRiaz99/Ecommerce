@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from . import models
 
 
 def home(request):
@@ -13,6 +14,17 @@ def shop(request):
 
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        txt_message = request.POST.get("message")
+        contact.object.create(
+            name = name , 
+            email = email ,
+            message = txt_message)
+        messages.success(request, "Your message has been sent successfully!")
+        return redirect("contact")
+        
     return render(request, 'contact.html')
 
 
